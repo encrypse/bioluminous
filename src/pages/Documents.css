@@ -1,0 +1,213 @@
+.documents-page { animation: fadeIn 0.3s ease; }
+
+.docs-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+@media (max-width: 900px) { .docs-layout { grid-template-columns: 1fr; } }
+
+/* Sidebar */
+.docs-sidebar {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  padding: 14px 10px;
+  height: fit-content;
+  position: sticky;
+  top: 80px;
+}
+
+.docs-sidebar-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-muted);
+  padding: 0 8px;
+  margin-bottom: 8px;
+}
+
+.doc-cat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: var(--radius);
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition);
+}
+.doc-cat-item:hover { background: var(--content-bg); color: var(--text-primary); }
+.doc-cat-item.active { background: var(--primary-light); color: var(--primary); font-weight: 600; }
+
+.doc-cat-count {
+  margin-left: auto;
+  font-size: 11px;
+  background: var(--content-bg);
+  color: var(--text-muted);
+  padding: 1px 7px;
+  border-radius: 99px;
+  font-weight: 600;
+}
+.doc-cat-item.active .doc-cat-count { background: var(--primary); color: white; }
+
+/* Main */
+.docs-main { display: flex; flex-direction: column; gap: 14px; }
+
+.docs-search-bar { display: flex; gap: 10px; }
+
+/* Document List */
+.docs-list {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.doc-item:last-child { border-bottom: none; }
+.doc-item:hover { background: var(--content-bg); }
+
+.doc-type-icon {
+  width: 44px;
+  height: 48px;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 2px;
+}
+.doc-ext { font-size: 8px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.doc-info { flex: 1; min-width: 0; }
+.doc-name { font-size: 13px; font-weight: 600; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 5px; }
+.doc-meta-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.doc-meta-row > span { font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 3px; }
+.doc-study { background: var(--accent-light); color: var(--text-secondary); padding: 1px 8px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+
+.doc-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.doc-version { font-size: 11px; color: var(--text-muted); font-family: monospace; font-weight: 600; }
+.doc-status { padding: 3px 9px; border-radius: 99px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.doc-actions { display: flex; gap: 4px; opacity: 0; transition: opacity var(--transition); }
+.doc-item:hover .doc-actions { opacity: 1; }
+
+.docs-empty {
+  text-align: center;
+  padding: 64px 24px;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Doc Detail Modal */
+.doc-detail-modal {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  width: 580px;
+  max-width: 96vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+
+.doc-detail-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--content-bg);
+}
+
+.doc-type-icon-lg {
+  width: 52px;
+  height: 56px;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 3px;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.doc-detail-info { flex: 1; min-width: 0; }
+.doc-detail-name { font-size: 15px; font-weight: 700; color: var(--text-primary); line-height: 1.3; }
+
+.doc-detail-body { overflow-y: auto; padding: 22px 24px; flex: 1; display: flex; flex-direction: column; gap: 18px; }
+
+.doc-desc-section { }
+.doc-section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 6px; }
+.doc-desc-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+.doc-meta-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  background: var(--content-bg);
+  padding: 16px;
+  border-radius: var(--radius);
+}
+
+.doc-meta-field { display: flex; flex-direction: column; gap: 2px; }
+
+.doc-detail-footer {
+  padding: 14px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--content-bg);
+}
+
+/* Upload Drop Zone */
+.doc-drop-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-md);
+  background: var(--content-bg);
+}
+.doc-drop-zone:hover, .doc-drop-zone.dragging { border-color: var(--primary); background: var(--primary-light); }
+.doc-drop-zone.has-file { border-color: #16a34a; border-style: solid; background: #f0fdf4; }
+
+.drop-empty { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.drop-empty > div:nth-child(2) { font-size: 14px; color: var(--text-secondary); }
+
+.drop-file-info { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.drop-file-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.drop-file-size { font-size: 12px; color: var(--text-muted); margin-top: 2px; }

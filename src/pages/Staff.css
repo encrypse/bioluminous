@@ -1,0 +1,150 @@
+.staff-page { padding: 24px; animation: fadeIn 0.3s ease; }
+
+/* Header card */
+.staff-header-card {
+  display: flex; align-items: center; justify-content: space-between;
+  background: white; border: 1px solid #e2e8f0; border-radius: 12px;
+  padding: 20px 24px; margin-bottom: 24px;
+}
+.staff-header-left { display: flex; align-items: center; gap: 14px; }
+.staff-header-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: #f0fdf9; color: #0a7c68;
+  display: flex; align-items: center; justify-content: center;
+}
+.staff-header-title { font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+.staff-header-sub { font-size: 13px; color: #64748b; }
+.staff-header-badges { display: flex; gap: 8px; }
+.header-badge-pill {
+  background: #f0fdf9; color: #0a7c68; border: 1px solid #d1fae5;
+  border-radius: 20px; padding: 4px 12px; font-size: 11px; font-weight: 600;
+}
+
+/* KPI grid */
+.staff-kpi-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px;
+}
+.staff-kpi-card {
+  border-radius: 12px; padding: 20px; color: white;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.staff-kpi-card.kpi-navy { background: linear-gradient(135deg, #1e293b, #0f172a); }
+.staff-kpi-card.kpi-blue { background: linear-gradient(135deg, #1d4ed8, #1e40af); }
+.staff-kpi-card.kpi-teal { background: linear-gradient(135deg, #0a7c68, #065f46); }
+.staff-kpi-card.kpi-cyan { background: linear-gradient(135deg, #0891b2, #0e7490); }
+.staff-kpi-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.8; margin-bottom: 6px; }
+.staff-kpi-value { font-size: 36px; font-weight: 800; line-height: 1; }
+.staff-kpi-sub { font-size: 12px; opacity: 0.7; margin-top: 4px; }
+.staff-kpi-icon-wrap { opacity: 0.3; }
+
+/* Directory card */
+.staff-directory-card {
+  background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;
+}
+.staff-directory-header {
+  display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px;
+}
+.staff-directory-title { font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 2px; }
+.staff-directory-sub { font-size: 13px; color: #64748b; }
+
+/* Table */
+.staff-table { width: 100%; border-collapse: collapse; }
+.staff-table th {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em;
+  color: #94a3b8; padding: 10px 16px; border-bottom: 2px solid #f1f5f9;
+  text-align: left; white-space: nowrap;
+}
+.staff-table td { padding: 14px 16px; border-bottom: 1px solid #f8fafc; vertical-align: middle; font-size: 13px; }
+.staff-table tr:hover td { background: #f8fafc; }
+.staff-td-num { text-align: center; font-weight: 600; color: #1e293b; }
+
+.staff-table-avatar {
+  width: 32px; height: 32px; border-radius: 50%; background: #0a7c68; color: white;
+  font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.staff-member-name { font-weight: 600; color: #1e293b; }
+.staff-member-email { font-size: 11px; color: #94a3b8; margin-top: 1px; }
+
+/* Role badges */
+.role-badge-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  border-radius: 6px; padding: 3px 10px; font-size: 11px; font-weight: 700; text-transform: capitalize;
+}
+.role-badge-admin { background: #1e293b; color: white; }
+.role-badge-staff { background: #f1f5f9; color: #475569; }
+
+/* Status badges */
+.status-badge-active { background: #f0fdf4; color: #166534; border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 600; }
+.status-badge-suspended { background: #fee2e2; color: #b91c1c; border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 600; }
+
+.overdue-count-red { color: #dc2626; font-weight: 700; }
+.overdue-count-ok { color: #94a3b8; }
+
+.view-staff-btn {
+  display: flex; align-items: center; gap: 4px;
+  border: 1px solid #e2e8f0; border-radius: 6px;
+  padding: 6px 12px; font-size: 12px; font-weight: 500; color: #475569;
+  background: white; cursor: pointer; white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.view-staff-btn:hover { background: #f0fdf9; color: #0a7c68; border-color: #d1fae5; }
+
+.invite-member-btn {
+  display: flex; align-items: center; gap: 6px;
+  background: #0a7c68; color: white; border: none;
+  border-radius: 8px; padding: 9px 16px; font-size: 13px; font-weight: 600;
+  cursor: pointer; white-space: nowrap; transition: background 0.15s;
+}
+.invite-member-btn:hover:not(:disabled) { background: #065f46; }
+.invite-member-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Modals */
+.staff-modal {
+  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  z-index: 1001; background: white; border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2); padding: 24px;
+  width: 560px; max-width: 95vw; max-height: 90vh; overflow-y: auto;
+}
+.staff-modal-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;
+}
+.staff-modal-header h3 { font-size: 16px; font-weight: 700; color: #0f172a; }
+.staff-modal-footer { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
+
+.staff-invite-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+
+.staff-detail-avatar {
+  width: 52px; height: 52px; border-radius: 50%; background: #0a7c68; color: white;
+  font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+}
+.staff-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 8px; }
+.staff-detail-field { background: #f8fafc; border-radius: 8px; padding: 10px 12px; }
+.staff-detail-label { font-size: 10px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+.staff-detail-value { font-size: 14px; font-weight: 600; color: #1e293b; }
+
+/* Reuse from index.css */
+.edit-field { display: flex; flex-direction: column; gap: 5px; }
+.edit-field label { font-size: 11px; font-weight: 600; color: #64748b; }
+.edit-field input, .edit-field select {
+  border: 1px solid #e2e8f0; border-radius: 8px; padding: 9px 12px;
+  font-size: 13px; color: #1e293b; background: white; font-family: inherit;
+  transition: border-color 0.15s; width: 100%; box-sizing: border-box;
+}
+.edit-field input:focus, .edit-field select:focus { outline: none; border-color: #0a7c68; }
+
+.btn-ghost {
+  padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;
+  color: #475569; background: transparent; border: 1px solid #e2e8f0; cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-ghost:hover { background: #f8fafc; }
+
+@media (max-width: 900px) {
+  .staff-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .staff-table { font-size: 12px; }
+}
+@media (max-width: 600px) {
+  .staff-kpi-grid { grid-template-columns: 1fr; }
+  .staff-header-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+}

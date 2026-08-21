@@ -1,0 +1,275 @@
+.studies-page { animation: fadeIn 0.3s ease; }
+
+.studies-kpi {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1100px) { .studies-kpi { grid-template-columns: repeat(2, 1fr); } }
+
+.studies-kpi-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: var(--card-shadow);
+}
+
+.studies-kpi-icon { width: 42px; height: 42px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.studies-kpi-value { font-size: 28px; font-weight: 700; color: var(--text-primary); line-height: 1; margin-bottom: 4px; font-family: var(--font-heading); }
+.studies-kpi-label { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+
+.studies-filters-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.studies-filter-group { display: flex; gap: 8px; }
+.studies-filter-group select {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--card-bg);
+  outline: none;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.studies-filter-group select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+
+/* Grid */
+.studies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1300px) { .studies-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .studies-grid { grid-template-columns: 1fr; } }
+
+/* Card */
+.study-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  transition: all var(--transition-md);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.study-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+.study-card-header {
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--content-bg);
+}
+
+.study-id-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.study-id { font-size: 11px; font-weight: 700; color: var(--primary); font-family: 'Courier New', monospace; background: var(--primary-light); padding: 2px 8px; border-radius: 6px; }
+
+.study-badges { display: flex; gap: 6px; align-items: center; }
+
+.study-phase-badge {
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.study-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.study-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.study-sponsor { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+
+.study-card-body { padding: 14px 18px; flex: 1; display: flex; flex-direction: column; gap: 12px; }
+
+.study-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Enrollment */
+.study-enrollment { display: flex; flex-direction: column; gap: 5px; }
+.enrollment-header { display: flex; justify-content: space-between; align-items: center; }
+.enrollment-label { font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+.enrollment-count { font-size: 12px; font-weight: 600; color: var(--text-primary); }
+.enrollment-bar { height: 6px; background: var(--content-bg); border-radius: 99px; overflow: hidden; border: 1px solid var(--border); }
+.enrollment-fill { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
+.enrollment-pct { font-size: 10px; color: var(--text-muted); }
+
+.study-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 12px;
+}
+.study-meta-item { display: flex; flex-direction: column; gap: 1px; }
+.meta-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+.meta-value { font-size: 12px; color: var(--text-primary); font-weight: 500; }
+
+.study-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.study-tag { padding: 2px 8px; background: var(--accent-light); color: var(--text-secondary); border-radius: 99px; font-size: 10px; font-weight: 600; }
+
+.study-card-footer {
+  padding: 10px 18px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--content-bg);
+}
+
+.study-sites { font-size: 12px; color: var(--text-muted); }
+
+.study-view-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: gap var(--transition);
+}
+.study-view-btn:hover { gap: 7px; }
+
+.studies-empty { grid-column: 1 / -1; text-align: center; padding: 64px; color: var(--text-muted); display: flex; flex-direction: column; align-items: center; gap: 4px; }
+
+/* Study Detail Modal */
+.study-detail-modal {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  width: 700px;
+  max-width: 96vw;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+
+.study-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 28px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--content-bg);
+}
+
+.study-detail-title { font-size: 16px; font-weight: 700; color: var(--text-primary); line-height: 1.4; margin: 6px 0 4px; }
+.study-detail-sponsor { font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+.study-detail-body { overflow-y: auto; padding: 24px 28px; flex: 1; display: flex; flex-direction: column; gap: 24px; }
+
+.study-detail-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+.detail-section { display: flex; flex-direction: column; gap: 12px; }
+.detail-section-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
+
+.study-enrollment-lg { }
+.enrollment-bar-lg { height: 10px; background: var(--content-bg); border-radius: 99px; overflow: hidden; border: 1px solid var(--border); }
+
+.study-info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.study-info-field { display: flex; flex-direction: column; gap: 2px; }
+.info-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); }
+.info-value { font-size: 13px; color: var(--text-primary); font-weight: 500; }
+
+.milestones-list { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 20px; }
+.milestones-list::before { content: ''; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: var(--border); }
+
+.milestone-item { display: flex; align-items: center; gap: 12px; padding: 8px 0; position: relative; }
+.milestone-dot { position: absolute; left: -20px; width: 14px; height: 14px; display: flex; align-items: center; justify-content: center; }
+.milestone-dot.done { color: var(--primary); }
+.milestone-empty-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--border); background: var(--card-bg); }
+
+.milestone-body { display: flex; justify-content: space-between; width: 100%; }
+.milestone-label { font-size: 13px; color: var(--text-primary); font-weight: 500; }
+.milestone-item.done .milestone-label { color: var(--text-secondary); }
+.milestone-date { font-size: 12px; color: var(--text-muted); }
+
+/* ── Enrolled participants list ──────────────────────── */
+.study-participants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.study-participant-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--content-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+}
+
+.study-participant-avatar {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.study-participant-info { flex: 1; min-width: 0; }
+.study-participant-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+.study-participant-meta { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+
+.study-participant-stage {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--primary-light);
+  color: var(--primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-transform: capitalize;
+}

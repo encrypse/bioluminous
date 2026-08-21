@@ -1,0 +1,33 @@
+.layout {
+  min-height: 100vh;
+  background: var(--content-bg);
+}
+
+.layout-main {
+  transition: margin-left 0.22s ease;
+  min-height: 100vh;
+}
+
+.layout-content {
+  padding: 28px 28px 40px;
+  max-width: 1600px;
+}
+
+/* ── Mobile ──────────────────────────────────────── */
+@media (max-width: 767px) {
+  .layout-main {
+    margin-left: 0 !important;
+  }
+
+  .layout-content {
+    padding: 16px 14px 32px;
+    /* push content below the mobile hamburger + header */
+    padding-top: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout-content {
+    padding: 12px 10px 28px;
+  }
+}

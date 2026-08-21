@@ -1,0 +1,62 @@
+.bioloader-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.bioloader-ring-outer {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bioloader-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+  border-top-color: var(--primary);
+  border-right-color: var(--primary-glow);
+}
+
+.bioloader-ring-inner {
+  inset: 10px;
+  border-top-color: transparent;
+  border-bottom-color: var(--primary);
+  border-left-color: var(--primary-glow);
+}
+
+.bioloader-icon {
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(42,156,92,0.3));
+}
+
+.bioloader-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+}
+
+.bioloader-page {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--content-bg);
+  z-index: 9999;
+}
+
+.bioloader-inline {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  vertical-align: middle;
+}
